@@ -1,0 +1,18 @@
+[book]
+title = "Calculus Guide"
+description = "Calculus Guide"
+authors = ["All contributor"]
+language = "en"
+multilingual = false
+src = "src"
+
+[output.html]
+mathjax-support = true
+git-repository-url = "https://github.com/calculus-guide/guide"
+edit-url-template = "https://github.com/calculus-guide/guide/main/{path}"
+additional-css = ["yt-embed.css"]
+cname = "calculus-guide.github.io"
+
+[output.html.print]
+enable = true    # include support for printable output
+page-break = true # insert page-break after each chapter
