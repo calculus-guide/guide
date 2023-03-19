@@ -15,7 +15,7 @@ RUN curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.28/mdbo
 
 # Build
 RUN bin/mdbook build
-RUN cd book
+WORKDIR book
 
 # Expose the webserver
 RUN BACKGROUND python3 -m http.server 80
