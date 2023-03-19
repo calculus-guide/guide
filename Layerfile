@@ -1,0 +1,22 @@
+#Use an Ubuntu 18.04 base for our staging server
+FROM vm/ubuntu:18.04
+
+# Install Dependences
+RUN apt-get update && apt-get glibc-source -y && apt-get install python3
+
+
+# Copy Repo
+COPY . .
+RUN ls
+RUN mkdir bin
+
+# Install mdBook
+RUN curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.27/mdbook-v0.4.27-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
+
+# Build
+RUN bin/mdbook build
+RUN cd book
+
+# Expose the webserver
+RUN BACKGROUND python3 -m http.server 80
+EXPOSE WEBSITE http://localhost:80
