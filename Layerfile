@@ -2,7 +2,7 @@
 FROM vm/ubuntu:18.04
 
 # Install Dependences
-RUN apt-get update && apt-get glibc-source -y && apt-get install python3
+RUN apt-get update && apt-get install python3 -y
 
 
 # Copy Repo
@@ -11,7 +11,7 @@ RUN ls
 RUN mkdir bin
 
 # Install mdBook
-RUN curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.27/mdbook-v0.4.27-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
+RUN curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.28/mdbook-v0.4.28-x86_64-unknown-linux-musl.tar.gz | tar -xz --directory=bin
 
 # Build
 RUN bin/mdbook build
