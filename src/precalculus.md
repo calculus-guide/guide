@@ -5,3 +5,5 @@ Precalulus is studied before the study of calculus. These include topics such as
 ## For reference
 
 [Precalculus: An Investigation of Functions (2nd Ed)](https://www.opentextbookstore.com/precalc/)
+
+https://archive.org/details/MITRES.18-008

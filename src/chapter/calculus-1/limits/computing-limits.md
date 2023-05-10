@@ -3,7 +3,6 @@
 ## Computing Limits
 
 
-
 ---
 
 # Resources
