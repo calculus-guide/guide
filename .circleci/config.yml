@@ -2,23 +2,16 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: ubuntu
+      - image: peaceiris/mdbook
     steps:
       - checkout
       - run:
-          name: Install curl
-          command: apt-get update && apt-get install curl -y
-      - run:
-          name: Install rust
-          command: curl https://sh.rustup.rs -sSf | sh -s -- -y
-      - run: source "$HOME/.cargo/env"
-      - run:
-          name: Install and build book
-          command: cargo install mdbook && mdbook build
+          name: Build book
+          command: mdbook build
       - run: ls
       - run:
           name: Install node
-          command: curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+          command: apk add --update nodejs npm
       - run:
           name: Install wrangler
           command: npm install -g wrangler
