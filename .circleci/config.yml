@@ -10,7 +10,7 @@ jobs:
           command: apt-get update && apt-get install curl -y
       - run:
           name: Install rust
-          command: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup.sh\nchmod +x rustup.sh\n./rustup.sh -y\n\nsource \"$HOME\"/.cargo/env\n\nif [ \"$RUST_VERSION\" != \"stable\" ]; then\n\trustup toolchain install \"$RUST_VERSION\"\n\trustup default \"$RUST_VERSION\"\nfi\n"
+          command: curl https://sh.rustup.rs -sSf | sh -s -- -y
       - run:
           name: Install and build book
           command: cargo install mdbook && mdbook build
